@@ -193,7 +193,7 @@ export default function EventType({ actualBookings }) {
                                         <label className="text-lg font-semibold text-left">Url</label>
                                         <div className="flex items-center">
                                             <p className="p-2 px-4 font-semibold text-gray-400 border-t border-b border-l bg-gray-50">https://cal.com/{session.user.username}/</p>
-                                            <input type="email" name="" id="" className="w-full px-4 py-2 border" placeholder="" value={title} readonly/>
+                                            <input type="email" name="" id="" className="w-full px-4 py-2 border" placeholder="" value={title} readOnly/>
                                         </div>
                                     </div>
                                     <div className="flex flex-col">
