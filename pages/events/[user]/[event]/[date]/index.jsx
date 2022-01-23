@@ -3,6 +3,7 @@ import { getSession, useSession } from 'next-auth/client'
 import { FcGlobe } from 'react-icons/fc'
 import { MdAccessTimeFilled } from 'react-icons/md'
 import { AiFillCalendar } from 'react-icons/ai'
+import { BounceLoader } from "react-spinners";
 import { useRouter } from 'next/router'
 import axios from 'axios'
 
@@ -143,7 +144,7 @@ export default function Index({ actualEventType }) {
     } else {
         return (
             <div className="flex items-center justify-center h-screen px-auto">
-                <p className="font-bold text-center">Please wait...</p>
+                <BounceLoader />
             </div>
         )
     }

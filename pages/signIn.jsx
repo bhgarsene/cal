@@ -40,7 +40,7 @@ export default function SignIn () {
                 }
                 else {
                     setIsLoading(true)
-                    router.push(result.url);
+                    // router.push(result.url);
                 }
             })
         } catch (error) {

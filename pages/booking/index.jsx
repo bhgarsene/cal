@@ -7,6 +7,7 @@ import prisma from '../../lib/prisma'
 import { AiOutlineCalendar } from 'react-icons/ai'
 import { IoMdAdd } from 'react-icons/io'
 import Popup from './newType'
+import { BounceLoader } from "react-spinners";
 import axios from 'axios'
 
 
@@ -76,11 +77,11 @@ export default function Index({ actualBookings }) {
                             </div>
                             {
                                 actualBookings.length > 0 ?
-                                    <div>
+                                    <div className="my-8 border">
                                         {
                                             actualBookings.map((booking) => {
                                                 return (
-                                                    <div key={booking.id} className="flex justify-between px-8 py-6 my-8 text-sm font-semibold bg-white">
+                                                    <div key={booking.id} className="flex justify-between px-8 py-6 text-sm font-semibold bg-white border-b">
                                                         <div className="flex gap-8">
                                                             <div className="">
                                                                 <p className="">{new Date(booking.event_date).toISOString().slice(0,10)}</p>
@@ -109,11 +110,11 @@ export default function Index({ actualBookings }) {
                                                 )
                                             })
                                         }
-                                        <div className="flex items-center justify-center w-full p">
+                                        {/* <div className="flex items-center justify-center w-full p">
                                             <div className="bg-gray-400">
                                                 <p className="px-6 py-2 text-white">No more Result</p>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     :
                                     <div className="flex flex-col items-center w-full mt-4 border">
@@ -143,7 +144,7 @@ export default function Index({ actualBookings }) {
     } else {
         return (
             <div className="flex items-center justify-center h-screen px-auto">
-                <p className="font-bold text-center text-red-500">Please wait...</p>
+                <BounceLoader />
             </div>
         )
     }

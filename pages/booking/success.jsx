@@ -3,6 +3,7 @@ import { FcCheckmark } from 'react-icons/fc'
 import { AiOutlineGoogle } from 'react-icons/ai'
 import { SiMicrosoftoffice } from 'react-icons/si'
 import { SiMicrosoftoutlook } from 'react-icons/si'
+import { BounceLoader } from "react-spinners";
 import { getSession , useSession } from 'next-auth/client'
 
 export const getServerSideProps = async (context) => {
@@ -101,7 +102,7 @@ export default function Success({ actualEventType, guestNames }) {
     } else {
         return (
             <div className="flex items-center justify-center h-screen px-auto">
-                <p className="font-bold text-center text-red-500">Please wait...</p>
+                <BounceLoader />
             </div>
         )
     }

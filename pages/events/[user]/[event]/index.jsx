@@ -9,6 +9,7 @@ import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
+import { BounceLoader } from "react-spinners";
 import axios from 'axios';
 
 export const getServerSideProps = async (context) => {
@@ -171,7 +172,7 @@ export default function Index({ eventType }) {
     } else {
         return (
             <div className="flex items-center justify-center h-screen px-auto">
-                <p className="font-bold text-center text-red-500">Please wait...</p>
+                <BounceLoader />
             </div>
         )
     }

@@ -10,7 +10,7 @@ import { IoMdAdd } from 'react-icons/io'
 import Popup from './newType'
 import axios from 'axios'
 import Link from 'next/link'
-
+import { BounceLoader } from "react-spinners";
 
 export const getServerSideProps = async (context) => {
     const session = await getSession(context)
@@ -232,7 +232,7 @@ export default function EventType({ actualBookings }) {
     } else {
         return (
             <div className="flex items-center justify-center h-screen px-auto">
-                <p className="font-bold text-center">Please wait...</p>
+                <BounceLoader />
             </div>
         )
     }
