@@ -26,8 +26,9 @@ model EventType {
   URL         String
   description String
   userId      String
+  length      String
   user        User     @relation(fields: [userId], references: [id])
-  bookings    Event[]
+  event       Event[]
   createdAt   DateTime @default(now()) @map(name: "created_at")
   updatedAt   DateTime @updatedAt @map(name: "updated_at")
 }
@@ -36,7 +37,7 @@ model Event {
   id            String    @id @default(uuid())
   event_date    DateTime
   event_type_id String
-  event         EventType @relation(fields: [event_type_id], references: [id])
+  eventType     EventType @relation(fields: [event_type_id], references: [id])
   from          String
   to            String
   createdAt     DateTime  @default(now()) @map(name: "created_at")
@@ -48,8 +49,9 @@ model Event {
 
 model Guest {
   id       String @id @default(uuid())
+  name     String
   event_id String
   event    Event  @relation(fields: [event_id], references: [id])
-  email    String @unique
+  email    String
+  note     String
 }
-

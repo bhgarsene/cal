@@ -1,9 +1,9 @@
-import React,  {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-export default function signUp (){
+export default function SignUp (){
     const [username, setusername] = useState('')
     const [email, setemail] = useState('')
     const [password, setpassword] = useState('')

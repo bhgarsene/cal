@@ -63,7 +63,7 @@ export default function SignIn () {
                             <label className="font-semibold">Password</label>
                             <p className="font-semibold">Forget?</p>
                             </div>
-                            <input type="email" name="" id="" className="p-1 my-2 border-2 w-96"  value={password} onChange={e => setPassword(e.target.value)}/>
+                            <input type="password" name="" id="" className="p-1 my-2 border-2 w-96"  value={password} onChange={e => setPassword(e.target.value)}/>
                         </div>
                         <button className="flex justify-center py-2 text-white bg-black" onClick={onSubmit}>
                         {

@@ -3,7 +3,7 @@ import { FcGlobe } from 'react-icons/fc'
 import {MdAccessTimeFilled} from 'react-icons/md'
 import {AiFillCalendar} from 'react-icons/ai'
 
-export default function index() {
+export default function Index() {
     return(
         <div className="w-screen h-screen bg-gray-100">
             <div className="flex items-center justify-center w-full h-full">
