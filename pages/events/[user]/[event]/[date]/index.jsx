@@ -5,7 +5,7 @@ import { MdAccessTimeFilled } from 'react-icons/md'
 import { AiFillCalendar } from 'react-icons/ai'
 import { BounceLoader } from "react-spinners";
 import { useRouter } from 'next/router'
-import prisma from '../../lib/prisma'
+import prisma from '../../../../../lib/prisma'
 import axios from 'axios'
 
 export const getServerSideProps = async (context) => {
