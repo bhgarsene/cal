@@ -5,6 +5,7 @@ import { SiMicrosoftoffice } from 'react-icons/si'
 import { SiMicrosoftoutlook } from 'react-icons/si'
 import { BounceLoader } from "react-spinners";
 import { getSession , useSession } from 'next-auth/client'
+import prisma from '../../lib/prisma'
 
 export const getServerSideProps = async (context) => {
     const session = await getSession(context)
