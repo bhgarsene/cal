@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { signIn } from "next-auth/client"
 
 export default function SignUp (){
     const [username, setusername] = useState('')
@@ -16,7 +17,6 @@ export default function SignUp (){
         
         e.preventDefault();
         e.stopPropagation();
-        console.log('trying')
         setIsLoading(true)
         setErrorMessage(false)
         e.preventDefault();
@@ -34,13 +34,13 @@ export default function SignUp (){
                 password,
             })
             if (response.data.status == 200) {
-                console.log("Successful")
                 signIn("credentials", {
                     email,
                     password,
                     callbackUrl: `${window.location.origin}/booking`,
                     redirect: false
                 }).then(function (result) {
+                    console.log("Success")
                     router.push(result.url);
                     if (result.error !== null) {
                         console.log('erros')
