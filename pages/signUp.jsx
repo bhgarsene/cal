@@ -35,21 +35,20 @@ export default function SignUp (){
             })
             if (response.data.status == 200) {
                 console.log("Successful")
-                router.push(result.url);
                 signIn("credentials", {
                     email,
                     password,
                     callbackUrl: `${window.location.origin}/booking`,
                     redirect: false
                 }).then(function (result) {
-                    console.log("result")
+                    router.push(result.url);
                     if (result.error !== null) {
                         console.log('erros')
                         console.log(result)
                         if (result.status === 400) {
                             setIsLoading(false)
                             setHasError(true)
-                            setErrorMessage("User already existsss");
+                            setErrorMessage("User already exist");
                         }
                         else {
                             setIsLoading(false)
@@ -58,7 +57,6 @@ export default function SignUp (){
                         }
                     }
                     else {
-                        console.log("redirecting")
                         router.push(result.url);
                     }
                 })
