@@ -3,16 +3,10 @@ import prisma from "../../lib/prisma";
 
 export default async (req,res) =>{
     try {
-        const { eventDate , from ,to ,eventTypeId , duration , user} = req.body
+        const { eventDate , from ,to ,eventTypeId , user} = req.body
         console.log (eventDate)
         const newBooking = await prisma.event.create({
-            data:{
-                event_date:eventDate,
-                from:from,
-                to:to,
-                // duration:duration,
-                event_type_id:eventTypeId,
-                userId:user.id,
+            data:{ event_date:eventDate, from:from, to:to, event_type_id:eventTypeId, userId:user.id,
             }
         })
         //Everything done..

@@ -29,19 +29,11 @@ export default async(req , res)=>{
             })
             return;
         }
-
-        //new Event Type
         const newEvent = await prisma.eventType.create({
-            data:{
-                title:title,
-                URL:url,
-                description:description,
-                userId:user.id,
-                length:length
+            data:{ title:title,  URL:url,
+                description:description, userId:user.id, ength:length
             }
         })
-       
-        //Everything done..
     
        res.status(200).send({status:200 , message:"New event created successfully"})
     } catch (error) {

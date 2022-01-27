@@ -2,7 +2,6 @@ import prisma from "../../lib/prisma";
 
 export default async (req,res) =>{
     const { names , email , description , booking_id} = req.body
-    //check empty fields
 console.log (req.body)
     if(!names || !email ||!description ){
         res.status(400).json({
@@ -19,12 +18,7 @@ console.log (req.body)
     console.log ('gettin it')
     try {
         const newGuest = await prisma.guest.create({
-            data:{
-                name:names,
-                email:email,
-                note:description,
-                event_id:booking_id
-            }
+            data:{ name:names, email:email, note:description, event_id:booking_id }
         })
         if(newGuest){
             res.status(200).json({ status: 200, message: "Guest Created successfully" });
